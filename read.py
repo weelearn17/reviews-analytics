@@ -7,7 +7,10 @@ with open('reviews.txt', 'r') as f:
 		count += 1 #count = count + 1
 		if count % 1000 == 0: # % 跟1000求餘數 餘數為0則列印		
 			print(len(data)) #len 計算清單長度
-print(data[0])
-print('---------------------')
-print(data[5])
+print('檔案讀取完畢，總共有', len(data),'筆資料')
+
+sum_len = 0
+for d in data:
+	sum_len += len(d) #把每一筆留言的長度存進 sum_len
+print('留言的平均長度為',sum_len/len(data),'個字')
 
